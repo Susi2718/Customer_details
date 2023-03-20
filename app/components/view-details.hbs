@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{@contact.organisationName}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="name" class="fw-bold">Name:</label> <span id="name">{{@contact.firstName}} {{@contact.lastName}}</span>
+        </div>
+         <div class="col-md-6">
+            <label for="gender" class="fw-bold">Gender:</label> <span id="gender">{{@contact.gender}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Contact" class="fw-bold">Contact:</label> <span id="Contact">{{@contact.phoneNumber}}</span>
+        </div>
+          <div class="col-md-6">
+            <label for="email" class="fw-bold">Email:</label> <span id="email">{{@contact.email}}</span>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-md-6">
+            <label for="city" class="fw-bold">City:</label> <span id="city">{{@contact.city}}</span>
+        </div>
+         <div class="col-md-6">
+            <label for="country" class="fw-bold">Country:</label> <span id="country">{{@contact.country}}</span>
+        </div>
+        
+    </div>
+    <div class="row">
+         <div class="col-md-4">
+            <label for="zip" class="fw-bold">Zip:</label> <span id="zip">{{@contact.zip}}</span>
+        </div>
+    </div>
+           
+</div>

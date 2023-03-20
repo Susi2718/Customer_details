@@ -1,0 +1,104 @@
+{{page-title "ContactList"}}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <h4>Contact List</h4>
+        </div>
+        <div class="col ">
+        <button class="btn btn-primary btn-sm float-end" type="button" {{on "click" this.addNew}}>New</button>
+        </div>
+    </div>
+    {{!-- {{#if this.isShowDetails}}
+    <div class="row">
+        <div class="col-6">
+         <table class="table table-hover ember-view">
+                <thead>
+                    <tr>
+                        <th>Organisation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each @model as |contact|}}
+                            <tr tabindex="-1"  class="clickable" {{on "click" (fn this.showDetails contact.id)}}>
+                            <td > 
+                                <LinkTo @route="contact.details" class="text-dark "  @model={{contact.id}}>{{contact.organisationName}}</LinkTo>
+                            </td>
+                            </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+             {{outlet}}
+        </div>
+    </div>
+    {{else}}
+        <div class="row">
+            <table class="table table-hover ember-view">
+                <thead>
+                    <tr>
+                        <th>Organisation</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each @model as |contact|}}
+                            <tr tabindex="-1"  class="clickable" {{on "click" (fn this.showDetails contact.id)}}>
+                            <td > 
+                                <LinkTo @route="contact.details" class="text-dark "  @model={{contact.id}}>{{contact.organisationName}}</LinkTo>
+                            </td>
+                            <td>{{contact.email}}</td>
+                            <td>{{contact.phoneNumber}}</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" type="button" {{on "click" (fn this.edit contact.id)}}>Edit</button>
+                                <button class="btn btn-danger btn-sm" tyep="button" type="button" {{on "click" (fn this.deleteContact contact.id)}}>Delete</button>
+                            </td>
+                            </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/if}} --}}
+
+  <div class="row">
+    <div class="{{if this.isShowDetails "col-6" ""}}">
+ <table class="table table-hover ember-view">
+                <thead>
+                    <tr>
+                        <th>Organisation</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each @model as |contact|}}
+                            <tr tabindex="-1"  class="clickable" {{on "click" (fn this.showDetails contact.id)}}>
+                            <td > 
+                                <LinkTo @route="contact.details" class="text-dark "  @model={{contact.id}}>{{contact.organisationName}}</LinkTo>
+                            </td>
+                            <td>{{contact.email}}</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" type="button" {{on "click" (fn this.edit contact.id)}}>Edit</button>
+                                <button class="btn btn-danger btn-sm" tyep="button" type="button" {{on "click" (fn this.deleteContact contact.id)}}>Delete</button>
+                            </td>
+                            </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+    </div>
+    <div class="{{if this.isShowDetails "col-6" ""}}">
+       {{#if this.isShowDetails}} <button type="button" class="btn-close float-end" title="close" aria-label="Close" {{on "click" this.closeDetails}}></button>
+       {{/if}}
+        {{outlet}}
+    </div>
+        </div>
+
+
+</div>
+
+
+
+
+

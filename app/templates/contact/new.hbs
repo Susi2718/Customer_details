@@ -1,0 +1,107 @@
+{{page-title "New"}}
+<div class="container">
+    <div class="row">
+       <h4>{{this.title}}</h4>
+    </div>
+   
+        <form {{on "submit" this.addNew}} novalidate>
+            <div class="row">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <Input id="firstName" @type="text" class="form-control" @value={{this.model.firstName}} />
+                {{#each this.model.validationErrors.firstName as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <Input id="lastName" @type="text" class="form-control" @value={{this.model.lastName}} />
+                {{#each this.model.validationErrors.lastName as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+            {{!-- <div class="col-md-6">
+                <label for="gender" class="form-label">Gender</label>
+                <Input id="gender" @type="text" class="form-control" @value={{this.model.gender}} />
+            </div> --}}
+            <div class="col-md-6">
+                <label for="gender" class="form-label">Gender</label>
+                <select id="gender" class="form-control" value={{this.model.gender}}  {{on "change" this.ongenderchange}}>
+                    {{#each this.Gender as |gen|}}
+                        <option value={{gen.name}} >{{gen.name}}</option>
+                    {{/each}}
+                </select>
+                {{#each this.model.validationErrors.gender as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+             <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <Input id="email" @type="text" class="form-control" @value={{this.model.email}} />
+                {{#each this.model.validationErrors.email as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+             <div class="col-md-6">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <Input id="phoneNumber" @type="text" class="form-control" @value={{this.model.phoneNumber}} />
+                {{#each this.model.validationErrors.phoneNumber as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+             <div class="col-md-6">
+                <label for="organisationName" class="form-label">Organisation Name</label>
+                <Input id="organisationName" @type="text" class="form-control" @value={{this.model.organisationName}} />
+                {{#each this.model.validationErrors.organisationName as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+             <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <Input id="city" @type="text" class="form-control" @value={{this.model.city}} />
+                {{#each this.model.validationErrors.city as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+             <div class="col-md-6">
+                <label for="country" class="form-label">Country</label>
+                <Input id="country" @type="text" class="form-control" @value={{this.model.country}} />
+                {{#each this.model.validationErrors.country as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+             <div class="col-md-6">
+                <label for="zip" class="form-label">Zip</label>
+                <Input id="zip" @type="text" class="form-control" @value={{this.model.zip}} />
+                {{#each this.model.validationErrors.zip as |error|}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/each}}
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-primary float-end mx-2" type="submit" >{{this.buttonText}}</button>
+                <button  class="btn btn-primary float-end" type="button" {{on "click" this.backtoContact}}>Cancel</button>
+            </div>
+            </div> 
+        </form>
+       
+</div>
+
+{{outlet}}

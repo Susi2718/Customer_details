@@ -1,0 +1,25 @@
+{{page-title "ContactDetails"}}
+
+<div class="d-flex w-100 pt-2 flex-column full-screen ">
+  <header class="mb-2">
+    <div class="cutom-header">
+      <h3 class="float-md-start mb-0">Customer Details</h3>
+      <nav class="nav navbar-dark nav-masthead justify-content-center  float-md-end ">
+         <LinkTo class="nav-link " @route="home">Home</LinkTo>
+        <LinkTo class="nav-link" @route="about">About</LinkTo>
+        <LinkTo class="nav-link" @route="contact">Contact</LinkTo>
+      </nav>
+    </div>
+
+  </header>
+  <div>
+  {{outlet}}
+  </div>
+ 
+
+  <footer class="mt-auto text-white-50">
+    <p>@footer for the application</p>
+  </footer>
+</div>
+
+

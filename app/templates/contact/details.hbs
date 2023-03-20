@@ -1,0 +1,42 @@
+{{page-title "ContactDetails"}}
+            <div class="border border-dark rounded" >
+            <div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{@model.organisationName}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="name" class="fw-bold">Name:</label> <span id="name">{{@model.firstName}} {{@model.lastName}}</span>
+        </div>
+         <div class="col-md-6">
+            <label for="gender" class="fw-bold">Gender:</label> <span id="gender">{{@model.gender}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="Contact" class="fw-bold">Contact:</label> <span id="Contact">{{@model.phoneNumber}}</span>
+        </div>
+          <div class="col-md-6">
+            <label for="email" class="fw-bold">Email:</label> <span id="email">{{@model.email}}</span>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-md-6">
+            <label for="city" class="fw-bold">City:</label> <span id="city">{{@model.city}}</span>
+        </div>
+         <div class="col-md-6">
+            <label for="country" class="fw-bold">Country:</label> <span id="country">{{@model.country}}</span>
+        </div>
+        
+    </div>
+    <div class="row">
+         <div class="col-md-4">
+            <label for="zip" class="fw-bold">Zip:</label> <span id="zip">{{@model.zip}}</span>
+        </div>
+    </div>
+           
+</div>
+            </div>
+{{outlet}}
